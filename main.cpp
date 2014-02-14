@@ -1,4 +1,5 @@
 #include "flightmap.h"
+#include <vector>
 using namespace std;
 
 int main(int argc, char *argv[])
@@ -12,12 +13,18 @@ int main(int argc, char *argv[])
    FlightMap m(directory + file_name);
 
    //pair<int, int> a[] = { make_pair(4, 8), make_pair(4, 2), make_pair(5, 9), make_pair(4, 9), make_pair(5, 3) };
-   pair<int, int> a[] = { make_pair(4, 2) };
+   vector<pair<int, int>> a { make_pair(4, 8), make_pair(4, 2), make_pair(5, 9), make_pair(4, 9), make_pair(5, 3) };
 
-   for (int i = 0; i < sizeof(a) / sizeof(pair<int, int>); i++) {
+   //--pair<int, int> a[] = { make_pair(4, 2) };
 
-	   int origin = a[i].first;
-	   int dest = a[i].second;
+   //--for (int i = 0; i < sizeof(a) / sizeof(pair<int, int>); i++) {
+   for (auto iter = a.begin(); iter != a.end(); ++iter) {
+
+	 //--   int origin = a[i].first;
+	 //--  int dest = a[i].second;
+
+	   int origin = iter->first;
+	   int dest =  iter->second;
            
        try {
            
